@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang='pt-br' xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name='author' content="Giovani">
+<meta name='viewport' content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='/css/login.css'>
+<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<title>Login Academy</title>
+</head>
+<body>
+	<div class="main">
+	    <div class="wrapper">
+	        <header>Cadastre-se</header>
+	        <form th:object="${usuario}" method="POST" action="salvarUsuario">
+	        	<div role="alert" class="alert alert-danger" th:if="${msg}">
+	                <strong th:text="${msg}"></strong>
+	            </div>
+	            <div class="field email">
+	                <div class="input-area">
+	                    <input type="text" placeholder="Email" th:field="*{email}">
+	                    <i class="icon fas fa-envelope"></i>
+	                    <i class="error error-icon fas fa-exclamation-circle"></i>
+	                </div>
+	                <div class="error error-text">Email não pode ser vazio</div>
+	            </div>
+	            <div class="field password">
+	                <div class="input-area">
+	                    <input type="password" placeholder="Senha" th:field="*{password}">
+	                    <i class="icon fas fa-lock"></i>
+	                    <i class="error error-icon fas fa-exclamation-circle"></i>
+	                </div>
+	                <div class="error error-text">Senha não pode ser vazia</div>
+	            </div>
+	            <div class="field password-repeat">
+	                <div class="input-area">
+	                    <input type="password" placeholder="Repita a senha">
+	                    <i class="icon fas fa-lock"></i>
+	                    <i class="error error-icon fas fa-exclamation-circle"></i>
+	                </div>
+	                <div class="error error-text">Senha não pode ser vazia</div>
+	            </div>
+	            <input type="submit" value="Entrar">
+	        </form>
+	        <div class="signup-link">Já é usuário? <a href="/">Entrar</a></div>
+	    </div>
+    </div>
+    <script>
+        const form = document.querySelector("form")
+        const emailField = form.querySelector(".email")
+        const emailInput = emailField.querySelector("input")
+        const passField = form.querySelector(".password")
+        const passInput = passField.querySelector("input")
+        const passRepeatField = form.querySelector(".password-repeat")
+        const passRepeatInput = passRepeatField.querySelector("input")
+
+        form.onsubmit = e => {
+            e.preventDefault()
+            if (emailInput.value == '') {
+                emailField.classList.add("shake", "error")
+            } else {
+                checkEmail()
+            }
+            if (passInput.value == '') {
+                passField.classList.add("shake", "error")
+            }
+            if (passRepeatInput.value == '') {
+                passRepeatField.classList.add("shake", "error")
+            }
+
+            setTimeout(() => {
+                emailField.classList.remove("shake")
+                passField.classList.remove("shake")
+                passRepeatField.classList.remove("shake")
+            }, 500)
+
+            if (!emailField.classList.contains("error") && !passField.classList.contains("error") && !passRepeatField.classList.contains("error") && passInput.value === passRepeatInput.value) {
+                form.submit()
+            }
+        }
+
+        function checkEmail() {
+            let pattern = /^[^]+@[^]+\.[a-z]{2,3}$/
+            if (!emailInput.value.match(pattern)) {
+                emailField.classList.add("error")
+                let errorText = emailField.querySelector(".error-text")
+                errorText.innerText = (emailInput.value != "") ? "Insira um Email válido" : "Email não pode ser vazio";
+            } else {
+                emailField.classList.remove("error")
+            }
+        }
+
+        passInput.onkeyup = () => {
+            if (passInput == '') {
+                passField.classList.add("error")
+            } else {
+                passField.classList.remove("error")
+            }
+        }
+        passRepeatInput.onkeyup = () => {
+            if (passRepeatInput == '') {
+                passRepeatField.classList.add("error")
+            } else {
+                passRepeatField.classList.remove("error")
+            }
+        }
+    </script>
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

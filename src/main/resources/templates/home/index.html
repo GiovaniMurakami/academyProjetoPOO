@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='pt-br' xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name='author' content="Giovani">
+<meta name='viewport' content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+	integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel='stylesheet' href='css/style.css'>
+<title>Projeto Academy</title>
+</head>
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+	<section class='neo-section'
+		style="background-image: url('/img/bg.jpg')">
+		<div class='sombra'></div>
+
+		<div class='center neo-container'>
+			<h1 class='texto-centro'>Sistema de Gerenciamento de Alunos</h1>
+			<div class='botoes'>
+				<div class='wm'>
+					<a class='btn btn-home text-white' th:href="@{/inserirAlunos}">Cadastrar
+						Aluno</a>
+				</div>
+				<div class='wm'>
+					<a class='btn btn-home text-white' th:href="@{/filtroAlunos}">Encontrar
+						Aluno</a>
+				</div>
+				<div class='clear'></div>
+			</div>
+		</div>
+	</section>
+
+	<div th:replace="fragmentos/fragmentos :: modalPesquisa"></div>
+
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

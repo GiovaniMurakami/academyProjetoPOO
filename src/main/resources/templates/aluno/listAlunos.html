@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='pt-br' xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name='author' content="Giovani">
+<meta name='viewport' content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+	integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel='stylesheet' href='/css/style.css'>
+<title>Listar Alunos</title>
+</head>
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<div class="container">
+		<h3>Últimos Alunos Adicionados</h3>
+		
+		<div class="table-container">
+			<table class='table table-bordered table-hover'>
+				<thead>
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Curso</th>
+						<th scope="col">Matrícula</th>
+						<th scope="col">Status</th>
+						<th scope="col">Turno</th>
+						<th scope="col">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr scope="row" th:each="aluno : ${alunosList}">
+						<td th:text="${aluno.nome}"></td>
+						<td th:text="${aluno.curso}"></td>
+						<td th:text="${aluno.matricula}"></td>
+						<td th:text="${aluno.status}"></td>
+						<td th:text="${aluno.turno}"></td>
+						<td>
+							<a class="btn btn-edit btn-primary" th:href="@{alterar/{id}(id=${aluno.id})}"><i class="fas fa-edit"></i> Editar</a>
+							<a class="btn btn-exclude btn-danger" th:href="@{excluir/{id}(id=${aluno.id})}"><i class="fas fa-times"></i> Excluir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div th:replace="fragmentos/fragmentos :: modalPesquisa"></div>
+	
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+	
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>

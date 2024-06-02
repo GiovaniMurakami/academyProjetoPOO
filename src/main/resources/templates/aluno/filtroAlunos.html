@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='pt-br' xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name='author' content="Giovani">
+<meta name='viewport' content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+	integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel='stylesheet' href='css/style.css'>
+<title>Encontrar Alunos</title>
+</head>
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<div class="container">
+		<h4>Encontrar Alunos</h4>
+		<hr>
+			<form method="POST" action="/pesquisarAluno" th:object="${aluno}">
+			
+				<div class="input-group col-6 offset-3">
+					<input class='form-control' placeholder="Busque por um nome" th:field="*{nome}">
+					<div class="input-group-append">
+						<button type="submit" class="btn btn-outline-secondary">Pesquisar</button>
+					</div>
+				</div>
+			
+			</form>
+		<hr>
+		<div class="card-container">
+			<div class="row">
+				<div class="card" style="width: 250px;">
+					<img class="card-img-top" src="#">
+					<div class="card-body">
+						<h5 class="card-title">Alunos Ativos</h5>
+						<p class="card-text">Busque por todos os alunos ativos no sistema!</p>
+						<a class="btn btn-outline-primary" th:href="@{/alunosAtivos}">Clique Aqui</a>
+					</div>
+				</div>
+				<div class="card" style="width: 250px;">
+					<img class="card-img-top" src="#">
+					<div class="card-body">
+						<h5 class="card-title">Alunos Inativos</h5>
+						<p class="card-text">Busque por todos os alunos inativos no sistema!</p>
+						<a class="btn btn-outline-primary" th:href="@{/alunosInativos}">Clique Aqui</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="card" style="width: 250px;">
+					<img class="card-img-top" src="#">
+					<div class="card-body">
+						<h5 class="card-title">Alunos Cancelados</h5>
+						<p class="card-text">Busque por todos os alunos cancelados no sistema!</p>
+						<a class="btn btn-outline-primary" th:href="@{/alunosCancelados}">Clique Aqui</a>
+					</div>
+				</div>
+				<div class="card" style="width: 250px;">
+					<img class="card-img-top" src="#">
+					<div class="card-body">
+						<h5 class="card-title">Alunos Trancados</h5>
+						<p class="card-text">Busque por todos os alunos trancados no sistema!</p>
+						<a class="btn btn-outline-primary" th:href="@{/alunosTrancados}">Clique Aqui</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div th:replace="fragmentos/fragmentos :: modalPesquisa"></div>
+	
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+	
+	
+</body>
+</html>

@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+nav {
+	min-height: 90px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+a {
+	cursor: pointer;
+	font-weight: bold;
+	color: inherit;
+	text-decoration: none;
+}
+
+.wm .a.text-white{
+	color: white !important;
+	text-decoration: none;
+}
+
+a.btn-nav:hover {
+	color: #BA68C8;
+}
+
+.neo-section {
+	min-height: 830px;
+	background-size: cover !important;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	padding: 30px;
+	position: relative;
+}
+
+.wm {
+	width: 50%;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.center {
+	text-align: center;
+}
+
+.sombra {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 100;
+}
+
+.neo-container {
+	max-width: 1280px;
+	padding: 2%;
+	margin: 0 auto;
+	margin-top: 200px;
+}
+
+.neo-section>.neo-container {
+	position: relative;
+	z-index: 105;
+}
+
+.texto-centro {
+	color: white;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.btn-home {
+	width: 27 vh;
+	color: #fff;
+	border-radius: 10px;
+	border: 3px solid #A55EEA;
+	padding: 20px;
+	font-weight: bold;
+}
+
+.btn-home:hover {
+	color: #CE93D8;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.botoes {
+	padding: 2% 15%;
+}
+
+.rodape {
+	color: white;
+	background-color: #4527A6;
+	text-align: center;
+	font-size: 1.25em;
+	padding: 15px
+}
+
+@media screen and (max-width: 991px) {
+	.wm {
+		width: 100%;
+		margin-top: 2vh;
+	}
+	.nav {
+		height: 100%;
+	}
+	.neo-container {
+		margin-top: 120px;
+	}
+	.texto-centro {
+		font-size: 2em;
+	}
+	.btn-edit {
+		margin-bottom: 1vh;
+	}
+}
+
+.container {
+	margin-bottom: 2vh;
+	margin-top: 2vh;
+	min-height: 80vh;
+}
+
+.btn-cadastrar {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h4, h3 {
+	text-align: center;
+}
+
+.table-container {
+	overflow-x:auto;
+}
+
+.card-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2vh;
+	flex-wrap: wrap;
+}
+
+.card {
+	margin: 0 2vh;
+}
+
+@media screen and (max-width: 768px) {
+	.row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.card {
+		margin-top: 2vh;
+	}
+}
+
+

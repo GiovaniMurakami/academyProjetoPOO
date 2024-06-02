@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='pt-br' xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name='author' content="Giovani">
+<meta name='viewport' content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+	integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel='stylesheet' href='/css/style.css'>
+<title>Projeto Academy</title>
+</head>
+<body>
+	<header th:fragment="cabecalho">
+		<nav class='navbar navbar-expand-lg navbar-dark'
+			style='background-color: #4527A6'>
+			<a class='navbar-brand' th:href="@{/index}"> <img src='#' />
+			</a>
+			<button class='navbar-toggler' type='button' data-toggle='collapse'
+				data-target='#navMobile'>
+				<span class='navbar-toggler-icon'></span>
+			</button>
+			<div id='navMobile'
+				class='navbar-collapse collapse justify-content-end'>
+				<a class='btn-nav nav-item nav-link' th:href="@{/index}"><i
+					class='fas fa-home'></i> Home</a> <a class='btn-nav nav-item nav-link'
+					th:href="@{/inserirAlunos}"><i class='fas fa-user-graduate'></i>
+					Cadastrar Aluno</a> <a class='btn-nav nav-item nav-link'
+					data-toggle="modal" data-target="#modalPesquisa"><i
+					class='fas fa-search'></i> Pesquisar Aluno</a>
+				<form action='/logout' method="POST">
+					<button type="submit" class='btn-nav nav-item nav-link btn-danger'>
+						<i class='fas fa-times'></i> Sair
+					</button>
+				</form>
+			</div>
+		</nav>
+	</header>
+
+	<footer th:fragment="rodape">
+		<div class='rodape'>
+			<span>Todos os direitos reservados - 2024 &copy;</span>
+		</div>
+	</footer>
+
+	<div th:fragment="modalPesquisa" id="modalPesquisa" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Encontre um aluno</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="/pesquisarAluno" th:object="${aluno}">
+					<div class="modal-body">
+						<input type="text" placeholder="Digite o nome do aluno"
+							class="form-control" th:field="*{nome}">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+						<button type="submit" class="btn btn-success">Pesquisar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
