@@ -89,6 +89,7 @@ public class AlunoController {
     public ModelAndView listaAlunosAtivos() {
         ModelAndView mv = new ModelAndView("aluno/alunosFiltrados");
         mv.addObject("alunosFiltrados", alunoRepositorio.findByStatusAtivo());
+    	mv.addObject("aluno", new Aluno());
         return mv;
     }
     
