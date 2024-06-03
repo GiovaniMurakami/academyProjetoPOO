@@ -35,7 +35,7 @@ public class ServiceUsuario {
     public Usuario loginUser(String email, String senha) throws ServiceExp {
         Usuario userLogin = usuarioRepositorio.findLoginByEmail(email, senha);
         if (userLogin == null) {
-            throw new ServiceExp("Usuário não encontrado ou senha inválida");
+            throw new ServiceExp("Email não encontrado ou senha inválida");
         }
         return userLogin;
     }
