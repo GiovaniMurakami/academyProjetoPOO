@@ -115,6 +115,8 @@ Este é um projeto de uma aplicação de controle acadêmico desenvolvida em Jav
 
 -   Certifique-se de que o banco de dados configurado está em execução antes de iniciar a aplicação.
 -   Este projeto pode ser expandido com novas funcionalidades, como relatórios, integração com sistemas de pagamento, entre outros.
+-   Abaixo existe um link que te redireciona para o TUTORIAL.MD.
+    (https://github.com/GiovaniMurakami/academyProjetoPOO/blob/master/docs/TUTORIAL.MD).
 
 ## Autores:
 
