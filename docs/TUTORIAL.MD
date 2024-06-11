@@ -10,7 +10,7 @@ Bem-vindo ao sistema de gerenciamento de alunos! Este tutorial irá guiá-lo pel
 
 Para começar, você precisa se cadastrar no sistema. Siga os passos abaixo:
 
-![Imagem Cadastro](./tutorial%20img/login.png)
+![Imagem Cadastro](./tutorial%20img/signIn.png)
 
 1. Acesse a página de cadastro.
 2. Informe seu **e-mail** (deve ser único e ter o formato de e-mail, por exemplo, email@email.com).
@@ -19,6 +19,8 @@ Para começar, você precisa se cadastrar no sistema. Siga os passos abaixo:
 5. Clique em **Entrar** para realizar o cadastro.
 
 ### 2. Acesso
+
+![Imagem Login](./tutorial%20img/login.png)
 
 #### 2.1. Realizar Acesso
 
@@ -29,6 +31,8 @@ Após o cadastro, siga os passos para acessar o sistema:
 3. Clique em **Entrar**.
 
 ### 3. Cadastro de Alunos
+
+![Imagem Cadastro Alunos](./tutorial%20img/insert.png)
 
 #### 3.1. Cadastrar Aluno
 
@@ -44,6 +48,8 @@ Para cadastrar um novo aluno, siga os passos abaixo:
 
 ### 4. Consultar Alunos
 
+![Imagem Consulta Alunos](./tutorial%20img/searchModal.png)
+
 #### 4.1. Pesquisa de Alunos
 
 Para pesquisar um aluno, siga os passos abaixo:
@@ -53,6 +59,8 @@ Para pesquisar um aluno, siga os passos abaixo:
 3. Visualize os resultados da pesquisa.
 
 #### 4.2. Consultar Alunos por Filtros
+
+![Imagem Pesquisa por Filtros](./tutorial%20img/filters.png)
 
 Para consultar alunos por filtros, siga os passos abaixo:
 
@@ -65,6 +73,8 @@ Para consultar alunos por filtros, siga os passos abaixo:
 
 ### 5. Editar Alunos
 
+![Imagem Editar Alunos](./tutorial%20img/alter.png)
+
 #### 5.1. Editar Aluno
 
 Para editar as informações de um aluno, siga os passos abaixo:
@@ -76,9 +86,17 @@ Para editar as informações de um aluno, siga os passos abaixo:
 
 ### 6. Logout
 
+![Imagem Home](./tutorial%20img/home.png)
+
 #### 6.1. Realizar Logout
 
 Para sair do sistema, clique em **Sair** no campo superior direito da tela.
+
+## Diagrama de Classes
+
+Abaixo, temos um diagrama de classes que representa as relações entre as classes implementadas dentro da aplicação
+
+![Imagem Home](./tutorial%20img/academyProjetoPOO-master.png)
 
 ## Conclusão
 
